@@ -8,6 +8,12 @@ import torchmetrics
 
 def make_sequence_from_time_series(ts: Any, train_seq_size: int, test_seq_size: int) \
         -> Union[Tuple[List, List], Tuple[Tensor, Tensor]]:
+    """
+    :param ts: target values from dataset
+    :param train_seq_size: integer to separate length of train sequence
+    :param test_seq_size: integer to separate length of test sequence
+    :return: x, y
+    """
 
     x, y = [], []
     if ts.shape[0] - train_seq_size - test_seq_size != 0:

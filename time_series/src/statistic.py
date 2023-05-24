@@ -2,6 +2,11 @@ from statsmodels.tsa.stattools import adfuller
 
 
 def check_stationarity(ts, cfg='full'):
+    """
+    :param ts: target value from datasets
+    :param cfg: type full or smth else
+    :return: info about stationary
+    """
     dftest = adfuller(ts)
     adf = dftest[0]
     pvalue = dftest[1]

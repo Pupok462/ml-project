@@ -4,6 +4,12 @@ import matplotlib.pyplot as plt
 
 
 def show_loss_after_train(train_loss, val_loss, metric_score):
+    """
+    :param train_loss: train loss from model
+    :param val_loss: val loss from model
+    :param metric_score: metric score from model
+    :return: Graph
+    """
     plt.figure(figsize=(15, 9))
     plt.subplot(1, 2, 1)
     plt.plot(train_loss)
@@ -19,6 +25,13 @@ def show_loss_after_train(train_loss, val_loss, metric_score):
 
 
 def show_forecast_test_plot(time, train, forecasts, test):
+    """
+    :param time: column Date of pd.DataFrame from datasets with time
+    :param train: column target_value[:train_size] of pd.DataFrame from dateset with value
+    :param forecasts: values of predicton ur model
+    :param test: column target_value[train_size:] of pd.DataFrame from dateset with value
+    :return: Graph
+    """
     fig = go.Figure([go.Scatter(x=time[:len(train)], y=train),
                      go.Scatter(x=time[len(train):], y=forecasts, name='forecast'),
                      go.Scatter(x=time[len(train):], y=test, name='test')])
@@ -26,6 +39,11 @@ def show_forecast_test_plot(time, train, forecasts, test):
 
 
 def show_time_series_only(time, target):
+    """
+    :param time: column Date of pd.DataFrame from datasets with time
+    :param target: column target_value of pd.DataFrame from dateset with value
+    :return: Graph
+    """
     fig = go.Figure(go.Scatter(x=time[:len(target)], y=target))
 
     fig.show()
