@@ -334,7 +334,6 @@ webencodings==0.5.1
 websocket-client==1.4.2
 websockets==11.0.3
 Werkzeug==2.2.2
-whoosh @ git+https://gitlab.com/whoosh.bike/a2/a2-backend@f4d4e74d14d0e7a788600d1f49409bf29adc3e4c#subdirectory=libs/whoosh
 widgetsnbextension==4.0.3
 wrapt==1.14.1
 wsproto==1.2.0
